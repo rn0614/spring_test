@@ -11,7 +11,7 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
 	
 	<!-- <context:annotation-config/> -->
-	
+	<!-- 태그를 검색해보는 부분, 위에 내용을 포함 base-package안의 tag들을 확인함 -->
 	<context:component-scan base-package="com.newlecture.web.controller"/>
 	
 	<!-- @Controller <bean id="/index"
@@ -23,6 +23,8 @@
 	<bean id="/notice/detail"
 		class="com.newlecture.web.controller.notice.DetailController" />-->
 
+
+	<!-- 초기설정으로 xml을 사용하는데 이때 di를 위해 bean으로 객체를 생성하고 안에 TilesView 삽입  -->
 	<bean
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
@@ -30,12 +32,14 @@
 		<property name="order" value="1" />
 	</bean>
 	
+	<!-- 타일 화면 설정함 -->
 	<bean
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<property name="definitions" value="/WEB-INF/tiles.xml" />
 	</bean>
 
 
+	<!-- Controller에서 String type으로 view주소 반환시 필요한 것 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/"></property>
@@ -43,12 +47,12 @@
 		<property name="order" value="2"/>
 	</bean>
  
-
+	<!-- 복수개의 첨부파일 -->
   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="314572800" />
 	</bean>
  
- 
+	<!-- static 요소들 넣기 --> 
 	<mvc:resources location="/static/" mapping="/**"></mvc:resources>
 	
 	<!-- 매핑에 필요함  -->

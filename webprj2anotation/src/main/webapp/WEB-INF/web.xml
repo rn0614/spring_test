@@ -22,9 +22,11 @@
   version="4.0"
   metadata-complete="true">
   
+  <!-- 설정 xml을 다른곳에서 가져오는 방법 -->
   <listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
@@ -33,6 +35,8 @@
 		</param-value>
 	</context-param>
   
+  
+  <!-- dispatcher를 두어 jsp에서 올라오는 요청을 확인/ servlet-context를 실행 -->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

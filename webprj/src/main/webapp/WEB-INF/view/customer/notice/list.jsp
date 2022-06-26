@@ -16,7 +16,7 @@
 
 	<div class="search-form margin-top first align-right">
 		<h3 class="hidden">공지사항 검색폼</h3>
-		<form class="table-form">
+		<form action="list" class="table-form">
 			<fieldset>
 				<legend class="hidden">공지사항 검색 필드</legend>
 				<label class="hidden">검색분류</label> <select name="f">
