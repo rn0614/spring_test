@@ -27,10 +27,9 @@ public class NoticeController {
 		//String p= request.getParameter("p");
 		//System.out.printf("page : %d", page);
 		
-		System.out.printf("page : %d, query : %s", page, query);
+		System.out.printf("page : %d, query : %s \n", page, query);
 		List<Notice> list = noticeService.getList(page, "TITLE", query);
 		model.addAttribute("list",list);
-		
 		
 		return "notice.list";
 	}
