@@ -14,12 +14,13 @@ public class NoticeController {
 	@GetMapping("list")
 	public String list(Model model) {
 		model.addAttribute("test","Hello~");
-		return "/customer/notice/list";
+		//return "/customer/notice/list"; //resourceViewResolver 형식
+		return "customer.notice.list";   //tilesViewResolver 형식
 	}
 	
 	@GetMapping("detail")
 	public String aaa() {
-		return "/customer/notice/detail";
+		return "customer.notice.detail";
 	}
 	
 }
